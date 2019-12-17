@@ -3,6 +3,7 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import useForm from 'react-hook-form'
+import Markdown from 'markdown-to-jsx'
 import _ from 'lodash'
 import { useMutation } from '@apollo/react-hooks'
 import { navigate } from 'gatsby'
@@ -32,7 +33,9 @@ export const DataDuesHeader = ({
     </Row>
     <Row className="my-4">
       <Col>
-        <p>{description}</p>
+        <Markdown className="markdown-content" options={{ forceBlock: true }}>
+          {description}
+        </Markdown>
       </Col>
     </Row>
   </>
